@@ -3,79 +3,491 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pretter Law PLLC - Home</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>About Us - Pretter Law PLLC | Experienced Legal Team in Brooklyn, NY</title>
+  <meta name="description" content="Learn about Pretter Law PLLC's experienced legal team. Professional attorneys dedicated to providing exceptional legal services in Brooklyn, NY.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <style>
-    .hero-banner {
-      background: url('hero-bg.png') no-repeat center center;
-      background-size: cover;
-      padding: 100px 0;
-      color: white;
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2d5a87;
+      --accent-color: #c49b61;
+      --text-dark: #2d3748;
+      --text-light: #718096;
+      --bg-light: #f7fafc;
     }
-    .footer {
-      background-color: #343a40;
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+
+    .heading-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: var(--primary-color) !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+
+    .navbar-brand img {
+      height: 60px;
+      width: auto;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('hero-about.png') center/cover;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
       color: white;
-      padding: 20px 0;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-section .lead {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .btn-primary-custom {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      padding: 12px 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #b8935a;
+      border-color: #b8935a;
+      transform: translateY(-2px);
+    }
+
+    /* Team Section */
+    .team-section {
+      background-color: var(--bg-light);
+      padding: 80px 0;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .team-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      background-color: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--accent-color);
+    }
+
+    /* Values Section */
+    .values-section {
+      padding: 80px 0;
+    }
+
+    .value-item {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .value-icon {
+      background-color: var(--primary-color);
+      color: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 2rem;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 60px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      display: block;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #1a202c;
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer h5 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .footer a {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent-color);
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <img src="pretter-law.png" alt="Pretter Law PLLC" height="100">
+        <img src="pretter-law.png" alt="Pretter Law PLLC">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link active" href="about.html">About Us</a>
-          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary-custom ms-2" href="contact.html">Free Consultation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="heading-font">About Our Firm</h1>
+          <p class="lead">Dedicated legal professionals committed to your success</p>
         </div>
       </div>
     </div>
-</nav>
+  </section>
 
-  <!-- Hero Banner -->
-  <div class="hero-banner text-center">
-    <h1 class="display-4">Professional Legal Services</h1>
-    <!-- <p>Committed to justice and your peace of mind.</p> -->
-  </div>
-
-  <!-- About Us Section -->
-<div class="container py-5">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>About Pretter Law PLLC</h2>
-      <p>Founded on the principles of integrity, professionalism, and outstanding client service, Pretter Law PLLC has established itself as a leading law firm. Our attorneys come from diverse legal backgrounds, bringing a wealth of knowledge and experience to our practice.</p>
-      <p>Our firm is committed to delivering legal solutions that are tailored to the unique needs of each client. We pride ourselves on our ability to blend traditional legal practices with innovative strategies to achieve optimal results. Our areas of expertise include corporate law, criminal defense, family law, and more, ensuring a comprehensive legal service for our clients.</p>
-      <p>At Pretter Law PLLC, we understand that facing legal challenges can be daunting. That's why we approach every case with compassion, understanding, and relentless dedication. Our goal is to not only provide exceptional legal representation but also to ensure that our clients are fully informed and comfortable throughout the legal process.</p>
-      <p>Whether you are seeking legal advice, need representation in court, or require assistance with a complex legal matter, our team is here to help. We invite you to contact us and learn how Pretter Law PLLC can be your advocate and ally in the legal world.</p>
+  <!-- About Content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2 class="heading-font mb-4">Our Story</h2>
+          <p class="lead text-muted">Founded on principles of integrity, professionalism, and outstanding client service.</p>
+          <p>Pretter Law PLLC has established itself as a leading law firm in Brooklyn, New York. Our attorneys come from diverse legal backgrounds, bringing a wealth of knowledge and experience to our practice that spans decades of combined legal expertise.</p>
+          <p>Our firm is committed to delivering legal solutions that are tailored to the unique needs of each client. We pride ourselves on our ability to blend traditional legal practices with innovative strategies to achieve optimal results for our clients.</p>
+          <p>At Pretter Law PLLC, we understand that facing legal challenges can be daunting. That's why we approach every case with compassion, understanding, and relentless dedication to achieving the best possible outcome.</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="hero-about.png" alt="About Pretter Law PLLC" class="img-fluid rounded shadow">
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <!-- Placeholder for an image -->
-      <img src="hero-about.png" alt="About Pretter Law PLLC" class="img-fluid">
-    </div>
-  </div>
-</div>
+  </section>
 
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <p>Years of Experience</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <p>Cases Won</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <p>Satisfied Clients</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <p>Available Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="values-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center mb-5">
+          <h2 class="heading-font mb-3">Our Core Values</h2>
+          <p class="lead text-muted">The principles that guide everything we do</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h4>Integrity</h4>
+            <p>We maintain the highest ethical standards in all our professional dealings, ensuring transparency and honesty with every client.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Excellence</h4>
+            <p>We strive for excellence in every case, continuously improving our skills and staying current with legal developments.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Commitment</h4>
+            <p>We are dedicated to our clients' success, providing personalized attention and unwavering support throughout the legal process.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4>Innovation</h4>
+            <p>We embrace innovative legal strategies and modern technology to provide efficient and effective legal solutions.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4>Compassion</h4>
+            <p>We understand the human side of legal issues and approach each case with empathy and genuine care for our clients.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="value-item">
+            <div class="value-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h4>Results</h4>
+            <p>We are results-driven, focusing on achieving the best possible outcomes for our clients through strategic legal advocacy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center mb-5">
+          <h2 class="heading-font mb-3">Our Legal Team</h2>
+          <p class="lead text-muted">Experienced attorneys dedicated to your success</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="team-card">
+            <div class="team-photo">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h4>Senior Partner</h4>
+            <p class="text-muted mb-3">Managing Attorney</p>
+            <p>With over 15 years of experience in civil litigation and criminal defense, our senior partner leads the firm with expertise in complex legal matters and a track record of successful outcomes.</p>
+            <div class="mt-3">
+              <span class="badge bg-secondary me-1">Civil Litigation</span>
+              <span class="badge bg-secondary me-1">Criminal Defense</span>
+              <span class="badge bg-secondary">Corporate Law</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <div class="team-card">
+            <div class="team-photo">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h4>Associate Attorney</h4>
+            <p class="text-muted mb-3">Family Law Specialist</p>
+            <p>Specializing in family law and personal injury cases, our associate attorney brings fresh perspectives and dedicated advocacy to every client relationship.</p>
+            <div class="mt-3">
+              <span class="badge bg-secondary me-1">Family Law</span>
+              <span class="badge bg-secondary me-1">Personal Injury</span>
+              <span class="badge bg-secondary">Mediation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="heading-font mb-3">Ready to Work With Us?</h2>
+          <p class="lead mb-4">Experience the difference that dedicated legal representation can make in your case.</p>
+          <a href="contact.html" class="btn btn-primary-custom btn-lg me-3">Schedule Consultation</a>
+          <a href="tel:+1234567890" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-phone me-2"></i>Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>Pretter Law PLLC &copy; 2023</p>
-      <p>2102 Ave Z Suite 201, Brooklyn, NY 11234</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5>Pretter Law PLLC</h5>
+          <p>Professional legal services you can trust. We're committed to achieving the best possible outcomes for our clients.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h5>Contact Info</h5>
+          <p><i class="fas fa-map-marker-alt me-2"></i>2102 Ave Z Suite 201<br>Brooklyn, NY 11234</p>
+          <p><i class="fas fa-phone me-2"></i>(123) 456-7890</p>
+          <p><i class="fas fa-envelope me-2"></i>contact@pretterlawpllc.com</p>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2024 Pretter Law PLLC. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p>Attorney Advertising | Privacy Policy | Terms of Service</p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS, Popper.js, and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
